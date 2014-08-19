@@ -27,21 +27,16 @@
 {
     [super viewDidLoad];
     
-    NSDictionary *blogPost1 = [[NSDictionary alloc] initWithObjectsAndKeys:@"The Missing Widget in Android", @"title",
-                               @"Ben Jakuben", @"author", nil];
+    NSURL *blogURL = [NSURL URLWithString:@"http://blog.teamtreehouse.com/api/get_recent_summary/"];
     
-    NSLog(@"%@", blogPost1);
+    NSData *jsonData = [NSData dataWithContentsOfURL:blogURL];
     
-    self.titles = [NSArray arrayWithObjects:@"Getting started with WordPress",
-                   @"Whitespace in Web Design",
-                   @"Adaptive Images and Responsive SVGS",
-                   @"Productivity is About Concentration",
-                   @"A Guide to Developing",
-                   @"Teacher Spotlight",
-                   @"Do You Love What You Do?",
-                   @"Quick Tips",
-                   @"How I Wrote a Book",
-                   @"Responsive Techniques", nil];
+    NSError *error = nil;
+    
+    NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+    NSLog(@"%@", dataDictionary);
+    
+    self.blogPosts = [dataDictionary objectForKey:@"posts"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,7 +56,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.titles count]; // equivalent to self.titles.count
+    return [self.blogPosts count]; // equivalent to self.titles.count
 }
 
 
@@ -69,10 +64,10 @@
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    cell.textLabel.text = [self.titles objectAtIndex:indexPath.row]; // equivalent to self.titles[indexPath.row]
+
+    NSDictionary *blogPost = [self.blogPosts objectAtIndex:indexPath.row];
+    cell.textLabel.text = [blogPost valueForKey:@"title"];
+    cell.detailTextLabel.text = [blogPost valueForKey:@"author"];
     
     return cell;
 }
