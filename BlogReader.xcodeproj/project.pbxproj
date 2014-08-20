@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		781BC44719A42A47001817C4 /* ADBlogPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 781BC44619A42A47001817C4 /* ADBlogPost.m */; };
 		78640EE719A3BB00003A29E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78640EE619A3BB00003A29E3 /* Foundation.framework */; };
 		78640EE919A3BB00003A29E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78640EE819A3BB00003A29E3 /* CoreGraphics.framework */; };
 		78640EEB19A3BB00003A29E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78640EEA19A3BB00003A29E3 /* UIKit.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		781BC44519A42A47001817C4 /* ADBlogPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBlogPost.h; sourceTree = "<group>"; };
+		781BC44619A42A47001817C4 /* ADBlogPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADBlogPost.m; sourceTree = "<group>"; };
 		78640EE319A3BB00003A29E3 /* BlogReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlogReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78640EE619A3BB00003A29E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		78640EE819A3BB00003A29E3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -112,6 +115,8 @@
 		78640EEC19A3BB00003A29E3 /* BlogReader */ = {
 			isa = PBXGroup;
 			children = (
+				781BC44519A42A47001817C4 /* ADBlogPost.h */,
+				781BC44619A42A47001817C4 /* ADBlogPost.m */,
 				78640F1719A3BE77003A29E3 /* ADTableViewController.h */,
 				78640F1819A3BE77003A29E3 /* ADTableViewController.m */,
 				78640EF519A3BB00003A29E3 /* ADAppDelegate.h */,
@@ -251,6 +256,7 @@
 			files = (
 				78640EF319A3BB00003A29E3 /* main.m in Sources */,
 				78640F1919A3BE77003A29E3 /* ADTableViewController.m in Sources */,
+				781BC44719A42A47001817C4 /* ADBlogPost.m in Sources */,
 				78640EF719A3BB00003A29E3 /* ADAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,6 +454,7 @@
 				78640F1119A3BB00003A29E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		78640F1219A3BB00003A29E3 /* Build configuration list for PBXNativeTarget "BlogReaderTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +463,7 @@
 				78640F1419A3BB00003A29E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

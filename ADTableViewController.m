@@ -7,6 +7,7 @@
 //
 
 #import "ADTableViewController.h"
+#import "ADBlogPost.h"
 
 @interface ADTableViewController ()
 
@@ -36,7 +37,14 @@
     NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
     NSLog(@"%@", dataDictionary);
     
-    self.blogPosts = [dataDictionary objectForKey:@"posts"];
+    self.blogPosts = [NSMutableArray array];
+    
+    NSArray *blogPostsArray = [dataDictionary objectForKey:@"posts"];
+    for (NSDictionary *bpDictionary in blogPostsArray) {
+        ADBlogPost *blogPost = [ADBlogPost blogPostWithTitle:[bpDictionary objectForKey:@"title"]];
+        blogPost.author = [bpDictionary objectForKey:@"author"];
+        [self.blogPosts addObject:blogPost];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,7 +64,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.blogPosts count]; // equivalent to self.titles.count
+    return [self.blogPosts count]; // equivalent to self.blogPosts.count
 }
 
 
@@ -65,9 +73,9 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
 
-    NSDictionary *blogPost = [self.blogPosts objectAtIndex:indexPath.row];
-    cell.textLabel.text = [blogPost valueForKey:@"title"];
-    cell.detailTextLabel.text = [blogPost valueForKey:@"author"];
+    ADBlogPost *blogPost = [self.blogPosts objectAtIndex:indexPath.row];
+    cell.textLabel.text = blogPost.title;
+    cell.detailTextLabel.text = blogPost.author;
     
     return cell;
 }
