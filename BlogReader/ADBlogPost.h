@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *author;
+@property (nonatomic, strong) NSString *thumbnail;
+@property (nonatomic, strong) NSString *date;
 
 // @property behind the scenes sets up instance variables + getter/setter methods
 // no need to use @synthesize in implementation
@@ -23,4 +25,6 @@
 // Convenience Constructor
 + (id) blogPostWithTitle:(NSString *)title;
 
+- (NSURL *) thumbnailURL;
+- (NSString *) formattedDate;
 @end

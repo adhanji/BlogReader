@@ -43,6 +43,8 @@
     for (NSDictionary *bpDictionary in blogPostsArray) {
         ADBlogPost *blogPost = [ADBlogPost blogPostWithTitle:[bpDictionary objectForKey:@"title"]];
         blogPost.author = [bpDictionary objectForKey:@"author"];
+        blogPost.thumbnail = [bpDictionary objectForKey:@"thumbnail"];
+        blogPost.date = [bpDictionary objectForKey:@"date"];
         [self.blogPosts addObject:blogPost];
     }
 }
@@ -74,8 +76,16 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
 
     ADBlogPost *blogPost = [self.blogPosts objectAtIndex:indexPath.row];
+    
+    if ([blogPost.thumbnail isKindOfClass:[NSString class]]) {
+        NSData *imageData = [NSData dataWithContentsOfURL:blogPost.thumbnailURL];
+        UIImage *image = [UIImage imageWithData:imageData];
+        cell.imageView.image = image;
+    } else {
+        cell.imageView.image = [UIImage imageNamed:@"treehouse.png"];
+    }
     cell.textLabel.text = blogPost.title;
-    cell.detailTextLabel.text = blogPost.author;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@", blogPost.author, [blogPost formattedDate]];
     
     return cell;
 }

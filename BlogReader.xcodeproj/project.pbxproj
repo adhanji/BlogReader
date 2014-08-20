@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		781BC44719A42A47001817C4 /* ADBlogPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 781BC44619A42A47001817C4 /* ADBlogPost.m */; };
+		781BC44919A463D5001817C4 /* treehouse.png in Resources */ = {isa = PBXBuildFile; fileRef = 781BC44819A463D5001817C4 /* treehouse.png */; };
 		78640EE719A3BB00003A29E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78640EE619A3BB00003A29E3 /* Foundation.framework */; };
 		78640EE919A3BB00003A29E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78640EE819A3BB00003A29E3 /* CoreGraphics.framework */; };
 		78640EEB19A3BB00003A29E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78640EEA19A3BB00003A29E3 /* UIKit.framework */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		781BC44519A42A47001817C4 /* ADBlogPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBlogPost.h; sourceTree = "<group>"; };
 		781BC44619A42A47001817C4 /* ADBlogPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADBlogPost.m; sourceTree = "<group>"; };
+		781BC44819A463D5001817C4 /* treehouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = treehouse.png; sourceTree = "<group>"; };
 		78640EE319A3BB00003A29E3 /* BlogReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlogReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78640EE619A3BB00003A29E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		78640EE819A3BB00003A29E3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -131,6 +133,7 @@
 		78640EED19A3BB00003A29E3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				781BC44819A463D5001817C4 /* treehouse.png */,
 				78640EEE19A3BB00003A29E3 /* BlogReader-Info.plist */,
 				78640EEF19A3BB00003A29E3 /* InfoPlist.strings */,
 				78640EF219A3BB00003A29E3 /* main.m */,
@@ -233,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				781BC44919A463D5001817C4 /* treehouse.png in Resources */,
 				78640F1619A3BB52003A29E3 /* MainStoryboard.storyboard in Resources */,
 				78640EF119A3BB00003A29E3 /* InfoPlist.strings in Resources */,
 				78640EF919A3BB00003A29E3 /* Images.xcassets in Resources */,
