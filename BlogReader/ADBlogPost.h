@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSString *author;
 @property (nonatomic, strong) NSString *thumbnail;
 @property (nonatomic, strong) NSString *date;
+@property (nonatomic, strong) NSURL *url;
 
 // @property behind the scenes sets up instance variables + getter/setter methods
 // no need to use @synthesize in implementation
